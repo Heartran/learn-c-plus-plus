@@ -3,19 +3,29 @@
 
 using namespace std;
 
+struct PersonaStruct {
+    char nome[8];
+    char cognome[8];
+    float altezza;
+    int eta;
+};
+
 int main() {
     cout << "Hello World!" << endl;
-    int etaDiNicolo;
-    etaDiNicolo = 30 + 1;
-    float altezzaDiNicolo;
-    altezzaDiNicolo = 1.97;
-    char nomeDiNicolo[8];
-    strcpy(nomeDiNicolo, "Nicolò");
-    char cognomeDiNicolo[5];
-    strcpy(cognomeDiNicolo, "Rogai");
-    int numeriPreferitiDiNicolo[5];
-    numeriPreferitiDiNicolo[0] = 25;
+    PersonaStruct nicoloS;
+    strcpy(nicoloS.nome, "Nicolò");
+    strcpy(nicoloS.cognome, "Rogai");
+    nicoloS.altezza = 1.97;
+    nicoloS.eta = 30 + 1;
     long etaDiNicoloInSecondi;
-    etaDiNicoloInSecondi = etaDiNicolo * 12 * 30 * 24 * 60 * 60;
-    cout << etaDiNicoloInSecondi;
+    etaDiNicoloInSecondi = nicoloS.eta * 12 * 30 * 24 * 60 * 60;
+    cout << etaDiNicoloInSecondi << endl;
+    PersonaStruct federicoS;
+    strcpy(federicoS.nome, "Federico");
+    strcpy(federicoS.cognome, "Viola");
+    federicoS.altezza = 1.83;
+    federicoS.eta = 23 + 1;
+    long etaDiFedericoInSecondi;
+    etaDiFedericoInSecondi = federicoS.eta * 12 * 30 * 24 * 60 * 60;
+    cout << etaDiFedericoInSecondi << endl;
 }
