@@ -10,6 +10,21 @@ struct PersonaStruct {
     int eta;
 };
 
+long etaInSecondi(int eta) {
+    long calcolo;
+    calcolo = eta;
+    calcolo *= 12;
+    calcolo *= 30;
+    calcolo *= 24;
+    calcolo *= 60;
+    calcolo *= 60;
+    return calcolo;
+}
+
+long etaInSecondi(PersonaStruct p) {
+    return etaInSecondi(p.eta + 2);
+}
+
 int main() {
     cout << "Hello World!" << endl;
     PersonaStruct nicoloS;
@@ -17,15 +32,11 @@ int main() {
     strcpy(nicoloS.cognome, "Rogai");
     nicoloS.altezza = 1.97;
     nicoloS.eta = 30 + 1;
-    long etaDiNicoloInSecondi;
-    etaDiNicoloInSecondi = nicoloS.eta * 12 * 30 * 24 * 60 * 60;
-    cout << etaDiNicoloInSecondi << endl;
+    cout << etaInSecondi(nicoloS) << endl;
     PersonaStruct federicoS;
     strcpy(federicoS.nome, "Federico");
     strcpy(federicoS.cognome, "Viola");
     federicoS.altezza = 1.83;
     federicoS.eta = 23 + 1;
-    long etaDiFedericoInSecondi;
-    etaDiFedericoInSecondi = federicoS.eta * 12 * 30 * 24 * 60 * 60;
-    cout << etaDiFedericoInSecondi << endl;
+    cout << etaInSecondi(federicoS) << endl;
 }
